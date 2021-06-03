@@ -9,7 +9,7 @@ const nock = require('nock')
 describe('Test #2', () => {
     it('should get status 200', (done) => {
         nock('https://test-ci-api-js.herokuapp.com')
-        .get('/tassks')
+        .get('/tasks')
         .reply(200,  {
             "name": "toawo",
             'status': "pending",
