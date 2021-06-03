@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to test API!" });
+    res.json({ message: "Welcome to test API deployed with CI!" });
 });
 
 app.use('/', task_routes)
