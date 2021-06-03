@@ -9,7 +9,7 @@ const url = 'http://localhost:3700'
 describe('Test mock db', () => {
     it('should get status 200', (done) => {
         nock('http://localhost:3700')
-        .get('/tasks')
+        .get('/taskss')
         .reply(200,  {
             "name": "toawo"
         })
