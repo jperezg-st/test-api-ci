@@ -1,13 +1,18 @@
 // routes.js
-module.exports = (app) => {
-    const todoList = require('../controllers/controller.js');
+'use strict';
+
+const express = require('express');
+const todoList= require('../controllers/controller.js');
+const router = express.Router();
+
+
+
   
-    app.route('/tasks')
-      .get(todoList.listTasks)
-      .post(todoList.createTask);
-  
-    app.route('/tasks/:taskId')
-      .get(todoList.readTask)
-      .put(todoList.updateTask)
-      .delete(todoList.deleteTask);
-  };
+router.get('/tasks', todoList.listTasks)
+router.post('/tasks', todoList.createTask);
+router.get('/tasks/:taskId', todoList.readTask)
+router.put('/tasks/:taskId', todoList.updateTask)
+router.delete('/tasks/:taskId', todoList.deleteTask);
+
+
+module.exports = router

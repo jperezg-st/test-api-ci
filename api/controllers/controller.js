@@ -1,6 +1,8 @@
 // controller.js
+'use strict'
 const mongoose = require('mongoose');
-const task = mongoose.model('Tasks');
+// const task = mongoose.model('Tasks');
+const task = require('../models/model')
 
 exports.listTasks = (req, res) => {
   task.find({}, (err, task) => {
