@@ -1,20 +1,22 @@
 const chai = require('chai')
-const request = require('supertest')("http://localhost:3700")
+const request = require('supertest')("https://test-ci-api-js.herokuapp.com")
 const chaiHttp = require('chai-http')
 const expect = require('chai').expect
 chai.use(chaiHttp)
 const nock = require('nock')
-const url = 'http://localhost:3700'
+// const url = 'http://localhost:3700'
 
-describe('Test mock db', () => {
+describe('Test POST', () => {
     it('should get status 200', (done) => {
-        nock('http://localhost:3700')
-        .get('/taskss')
+        nock('https://test-ci-api-js.herokuapp.com')
+        .post('/tasks')
         .reply(200,  {
-            "name": "toawo"
+            "name": "toawo",
+            'status': "pending",
+            "date_created": "2021-03-2021"
         })
     request
-        .get('/tasks')
+        .post('/tasks')
         .end((err, res) => {
             expect(res.body).has.property("name");
             done()
