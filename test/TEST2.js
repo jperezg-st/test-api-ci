@@ -1,5 +1,5 @@
 const chai = require('chai')
-const request = require('supertest')("https://test-ci-api-js.hsrokuapp.com")
+const request = require('supertest')("https://test-ci-api-js.herokuapp.com")
 const chaiHttp = require('chai-http')
 const expect = require('chai').expect
 chai.use(chaiHttp)
