@@ -15,11 +15,9 @@ jobs:
       - run:
           name: Run test
           command: npm test
-      -stor-test_results:
-        path: test-results
 
 workflows:
-  build-and-heroku_deploy:
+  build-test-heroku_deploy:
     jobs:
       - build-and-test
       - heroku/deploy-via-git:
