@@ -15,11 +15,6 @@ jobs:
       - run:
           name: Run test
           command: npm test
-<<<<<<< HEAD
-=======
-      - store_test_results:
-          path: test-results
->>>>>>> 4d9c154bc9ea4ef2aec8fee95fbeeda3a21c1e24
 
 workflows:
   build-test-heroku_deploy:
